@@ -12,62 +12,7 @@ public class JetApplication {
 	}
 
 	public static void main(String[] args) {
-
 		launch();
-	}
-
-	private static void launch() {
-		int choice;
-		airField = new AirField(jets);
-		airField.addJet(new JetImpl(250, "Cessna", 500, 250000));
-		airField.addJet(new FighterJet(1500, "F-17", 2000, 14500000, 6000));
-		airField.addJet(new FighterJet(3000, "SZ-44", 4500, 15500000, 3500));
-		airField.addJet(new FighterJet(4000, "F-22", 2600, 13500000, 7500));
-		airField.addJet(new CargoPlane(400, "A-330", 2000, 20000000, 450000));
-
-		input = new Scanner(System.in);
-		System.out.println("----Welcome to the airfield----");
-		do {
-			displayUserMenu();
-			choice = input.nextInt();
-			switch (choice) {
-			case 1:
-				listFleet();
-				break;
-			case 2:
-				flyAllJets();
-				break;
-			case 3:
-				System.out.println("The fastest jet is:\n");
-				viewFastestJet();
-				System.out.println();
-				break;
-			case 4:
-				System.out.println("The jet with the longest range is:\n");
-				viewLongestRange();
-				System.out.println();
-				break;
-			case 5:
-				System.out.println();
-				loadAllCargo();
-				break;
-			case 6:
-				System.out.println();
-				dogfight();
-				break;
-			case 7:
-				Jet newOne = getNewJet();
-				airField.addJet(newOne);
-				System.out.println();
-				newOne.toString();
-				System.out.println();
-				break;
-			case 8:
-				System.out.println("Thank you for visiting. Fly back soon!");
-				break;
-			}
-		} while (choice != 8);
-
 	}
 
 	private static void viewFastestJet() {
@@ -204,14 +149,59 @@ public class JetApplication {
 				.append("8. Quit");
 		System.out.println(sb);
 	}
+	
+	private static void launch() {
+		int choice;
+		airField = new AirField(jets);
+		airField.addJet(new JetImpl(250, "Cessna", 500, 250000));
+		airField.addJet(new FighterJet(1500, "F-17", 2000, 14500000, 6000));
+		airField.addJet(new FighterJet(3000, "SZ-44", 4500, 15500000, 3500));
+		airField.addJet(new FighterJet(4000, "F-22", 2600, 13500000, 7500));
+		airField.addJet(new CargoPlane(400, "A-330", 2000, 20000000, 450000));
 
-	private static int getCurrentLength() {
-		for (int j = 0; j < jets.length; j++) {
-			if (jets[j] == null) {
-				currentLength = j;
+		input = new Scanner(System.in);
+		System.out.println("----Welcome to the airfield----");
+		do {
+			displayUserMenu();
+			choice = input.nextInt();
+			switch (choice) {
+			case 1:
+				listFleet();
+				break;
+			case 2:
+				flyAllJets();
+				break;
+			case 3:
+				System.out.println("The fastest jet is:\n");
+				viewFastestJet();
+				System.out.println();
+				break;
+			case 4:
+				System.out.println("The jet with the longest range is:\n");
+				viewLongestRange();
+				System.out.println();
+				break;
+			case 5:
+				System.out.println();
+				loadAllCargo();
+				break;
+			case 6:
+				System.out.println();
+				dogfight();
+				break;
+			case 7:
+				Jet newOne = getNewJet();
+				airField.addJet(newOne);
+				System.out.println();
+				newOne.toString();
+				System.out.println();
+				break;
+			case 8:
+				System.out.println("Thank you for visiting. Fly back soon!");
 				break;
 			}
-		}
-		return currentLength;
+		} while (choice != 8);
+
 	}
+
 }
