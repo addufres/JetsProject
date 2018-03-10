@@ -16,13 +16,16 @@ public class JetApplication {
 	}
 
 	private static void viewFastestJet() {
+		double mach = jets[0].getSpeedInMach();
 		Jet fastest = jets[0];
 		for (int i = 1; i < airField.currentJetIndex; i++) {
 			if (fastest.getSpeed() < jets[i].getSpeed()) {
 				fastest = jets[i];
+				mach = jets[i].getSpeedInMach();
 			}
 		}
 		System.out.println(fastest.toString());
+		System.out.println(mach + " is this planes speed in MACH.");
 	}
 
 	private static void viewLongestRange() {
@@ -149,7 +152,7 @@ public class JetApplication {
 				.append("8. Quit");
 		System.out.println(sb);
 	}
-	
+
 	private static void launch() {
 		int choice;
 		airField = new AirField(jets);
@@ -201,7 +204,5 @@ public class JetApplication {
 				break;
 			}
 		} while (choice != 8);
-
 	}
-
 }
