@@ -6,9 +6,7 @@ public abstract class Jet {
 	protected int range;
 	protected long price;
 
-	public abstract void fly(); // prints out the Jet details and the amount of time 
-							   // the Jet can fly until it runs out of fuel
-							   // (based on speed and range).
+	public abstract void fly();
 
 	public Jet(double speed, String model, int range, long price) {
 		super();
@@ -53,15 +51,14 @@ public abstract class Jet {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Jet [speed=");
-		builder.append(speed);
-		builder.append(", model=");
+		builder.append("model = ");
 		builder.append(model);
-		builder.append(", range=");
+		builder.append(", speed = ");
+		builder.append(speed);
+		builder.append(" , range = ");
 		builder.append(range);
-		builder.append(", price=");
+		builder.append(" , price = ");
 		builder.append(price);
-		builder.append("]");
 		return builder.toString();
 	}
 

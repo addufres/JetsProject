@@ -7,8 +7,8 @@ public class JetImpl extends Jet {
 
 	@Override
 	public void fly() {
-		System.out.println(toString() + "\n");
-		System.out.println("This aircraft can travel at top speed for " + (speed/range) + " hours.");
+		System.out.println(toString());
+		System.out.println("This aircraft can travel at top speed for " + (speed/range) + " hours.\n");
 	}
 
 	@Override
@@ -24,5 +24,4 @@ public class JetImpl extends Jet {
 		builder.append(price);
 		return builder.toString();
 	}
-	
 }

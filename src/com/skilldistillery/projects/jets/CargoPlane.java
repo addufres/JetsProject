@@ -10,14 +10,23 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	@Override
 	public void fly() {
-		System.out.println(toString() + "\n");
-		System.out.println("This aircraft can travel at top speed for " + (speed / range) + " hours.");
+		System.out.println(toString());
+		System.out.println("This aircraft can travel at top speed for " + (speed / range) + " hours.\n");
 
 	}
 
 	@Override
 	public void loadCargo() {
-		System.out.println(model + " now initiating cargo load to max load capacity of " + maxLoad + " pounds.");
+		System.out.println(model + " now initiating cargo load to max load capacity of " + maxLoad + " pounds.\n");
 	}
+
+	public int getMaxLoad() {
+		return maxLoad;
+	}
+
+	public void setMaxLoad(int maxLoad) {
+		this.maxLoad = maxLoad;
+	}
+	
 
 }

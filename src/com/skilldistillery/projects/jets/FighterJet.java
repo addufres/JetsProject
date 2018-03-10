@@ -9,14 +9,21 @@ public class FighterJet extends Jet implements CombatReady {
 
 	@Override
 	public void fight() {
-		System.out.println(model + ": That's an affirmative control *KSHHH* engaging enemy aircraft *KSHHH*");
-		System.out.println(model + "firing at a rate of " + fireRate + " per minute.");
+		System.out.println(model + ": That's an affirmative control... over*KSHHH* engaging enemy aircraft... over*KSHHH*");
+		System.out.println("\tfiring at a rate of " + fireRate + " per minute... out\n");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println(toString() + "\n");
-		System.out.println("This aircraft can travel at top speed for " + (speed / range) + " hours.");
+		System.out.println(toString());
+		System.out.println("This aircraft can travel at top speed for " + (speed / range) + " hours.\n");
 	}
 
+	public int getFireRate() {
+		return fireRate;
+	}
+
+	public void setFireRate(int fireRate) {
+		this.fireRate = fireRate;
+	}
 }
