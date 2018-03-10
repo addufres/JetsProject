@@ -132,7 +132,10 @@ public class JetApplication {
 	}
 
 	private static void flyAllJets() {
+		double mach;
 		for (int i = 0; i < airField.currentJetIndex; i++) {
+			mach = jets[i].getSpeedInMach();
+			System.out.println(mach + " is this planes speed in MACH.");
 			jets[i].fly();
 		}
 	}
