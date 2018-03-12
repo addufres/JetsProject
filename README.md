@@ -14,7 +14,7 @@ It uses:
 	* There are three types of jets available to pick from. These subclasses of Jet are FighterJet, CargoPlane, JetImpl.
 	* FighterJet and CargoPlane each utilize interfaces to perform specific methods.
 * Switch statements are used to deliminate the users choice and to call the appropriate method.
-* Taking input from a user through the use of the Scanner object.
+* Takes input from a user through the use of the Scanner object.
 * I use abstract classes i.e. Jet. 
 * Call methods with parameters and call methods from objects.
 

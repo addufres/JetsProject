@@ -102,3 +102,4 @@ public abstract class Jet {
 		return speed * 0.0013;
 	}
 }
+

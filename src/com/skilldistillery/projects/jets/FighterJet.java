@@ -27,3 +27,4 @@ public class FighterJet extends Jet implements CombatReady {
 		this.fireRate = fireRate;
 	}
 }
+
